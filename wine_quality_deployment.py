@@ -42,7 +42,7 @@ df = pd.DataFrame({
     'density': [density],
     'pH': [pH],
     'sulphates': [sulphates],
-    'alcohol': [alcohol]
+    'alcohol': [alcohol],
     "quality": [quality],
     "type": [type]
 })
