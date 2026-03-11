@@ -11,7 +11,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load("wine_quality_prediction.pkl")
+model = joblib.load("wine_quality_model.pkl")
 
 st.title("Wine Quality Merged System")
 
@@ -31,26 +31,22 @@ alcohol = st.number_input("Alcohol")
 quality = st.number_input("Quality")
 type = st.number_input("type")
 
-
 df = pd.DataFrame({
-    "fixed acidity": [fixed_acidity],
-    "volatile acidity": [volatile_acidity],
-    "citric acid": [citric_acid],
-    "residual sugar": [residual_sugar],
-    "chlorides": [chlorides],
-    "free sulfur dioxide": [free_sulfur_dioxide],
-    "total sulfur dioxide": [total_sulfur_dioxide],
-    "density": [density],
-    "pH": [pH],
-    "sulphates": [sulphates],
-    "alcohol": [alcohol],
+    'fixed acidity': [fixed_acidity],
+    'volatile acidity': [volatile_acidity],
+    'citric acid': [citric_acid],
+    'residual sugar': [residual_sugar],
+    'chlorides': [chlorides],
+    'free sulfur dioxide': [free_sulfur_dioxide],
+    'total sulfur dioxide': [total_sulfur_dioxide],
+    'density': [density],
+    'pH': [pH],
+    'sulphates': [sulphates],
+    'alcohol': [alcohol]
     "quality": [quality],
     "type": [type]
 })
 
-if st.button("Predict"):
+if st.button("Predict Quality"):
     prediction = model.predict(df)
-    if prediction[0] ==1:
-      st.error("Wine quality bad")
-    else:
-      st.success("Wine quality Good")
+    st.success(f"Predicted Wine Quality: {prediction[0]}")
