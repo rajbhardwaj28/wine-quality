@@ -19,7 +19,7 @@ st.write("you can enter the data from sensor and check whether your machine will
 
 fixed_acidity= st.number_input("Fixed Acidity")
 volatile_acidity = st.number_input("Volatile Acidity")
-itric_acid = st.number_input("Citric Acid")
+citric_acid = st.number_input("Citric Acid")
 residual_sugar = st.number_input("Residual Sugar")
 chlorides = st.number_input("Chlorides")
 free_sulfur_dioxide = st.number_input("Free Sulfur Dioxide")
