@@ -44,7 +44,7 @@ df = pd.DataFrame({
     "sulphates": [sulphates],
     "alcohol": [alcohol],
     "quality":[quality],
-    "type": [type}
+    "type": [type]
 })
 if st.button("Predict Quality"):
     prediction = model.predict(df)
