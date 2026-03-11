@@ -2,12 +2,12 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-# Load the model
+
 model = joblib.load("wine_quality_prediction.pkl")
 
 st.title("🍷 Wine Quality Prediction System")
 
-# Layout: Using columns makes the app look much cleaner
+
 col1, col2 = st.columns(2)
 
 with col1:
@@ -26,7 +26,7 @@ with col2:
     alcohol = st.number_input("Alcohol", value=0.0)
     wine_type = st.selectbox("Wine Type (0=White, 1=Red)", options=[0, 1])
 
-# Create the dataframe WITHOUT the 'quality' column
+
 df = pd.DataFrame({
     "fixed acidity": [fixed_acidity],
     "volatile acidity": [volatile_acidity],
@@ -39,12 +39,13 @@ df = pd.DataFrame({
     "pH": [pH],
     "sulphates": [sulphates],
     "alcohol": [alcohol],
-    "type": [wine_type] 
+    "type": [wine_type],
+    "quality":[0]
 })
 
 if st.button("Predict Quality"):
     try:
-        # Ensure the column order matches the model's training order
+      
         df = df[model.feature_names_in_]
         
         prediction = model.predict(df)
