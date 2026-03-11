@@ -16,7 +16,7 @@ model = joblib.load("wine_quality_prediction.pkl")
 st.title("Wine Quality Merged System")
 
 st.write("Expected features:", model.feature_names_in_)
-st.write("Current features:", df.columns.tolist())
+
 
 fixed_acidity = st.number_input("Fixed Acidity")
 volatile_acidity = st.number_input("Volatile Acidity")
