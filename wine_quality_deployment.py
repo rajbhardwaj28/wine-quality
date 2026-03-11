@@ -11,7 +11,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load("wine_quality_model.pkl")
+model = joblib.load("wine_quality_prediction.pkl")
 
 st.title("Wine Quality Merged System")
 
