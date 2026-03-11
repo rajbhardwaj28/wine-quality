@@ -17,7 +17,7 @@ st.title("Wine Quality Merged System")
 
 st.write("you can enter the data from sensor and check whether your machine will work or fail under certain condition")
 
-fixed_acidity= st.number_input("Fixed Acidity")
+fixed_acidity = st.number_input("Fixed Acidity")
 volatile_acidity = st.number_input("Volatile Acidity")
 citric_acid = st.number_input("Citric Acid")
 residual_sugar = st.number_input("Residual Sugar")
@@ -28,25 +28,20 @@ density = st.number_input("Density")
 pH = st.number_input("pH")
 sulphates = st.number_input("Sulphates")
 alcohol = st.number_input("Alcohol")
-quality = st.number_input("Quality")
-type = st.number_input("type")
 
 df = pd.DataFrame({
-    'fixed acidity': [fixed_acidity],
-    'volatile acidity': [volatile_acidity],
-    'citric acid': [citric_acid],
-    'residual sugar': [residual_sugar],
-    'chlorides': [chlorides],
-    'free sulfur dioxide': [free_sulfur_dioxide],
-    'total sulfur dioxide': [total_sulfur_dioxide],
-    'density': [density],
-    'pH': [pH],
-    'sulphates': [sulphates],
-    'alcohol': [alcohol],
-    "quality": [quality],
-    "type": [type]
+    "fixed acidity": [fixed_acidity],
+    "volatile acidity": [volatile_acidity],
+    "citric acid": [citric_acid],
+    "residual sugar": [residual_sugar],
+    "chlorides": [chlorides],
+    "free sulfur dioxide": [free_sulfur_dioxide],
+    "total sulfur dioxide": [total_sulfur_dioxide],
+    "density": [density],
+    "pH": [pH],
+    "sulphates": [sulphates],
+    "alcohol": [alcohol]
 })
-
 if st.button("Predict Quality"):
     prediction = model.predict(df)
     st.success(f"Predicted Wine Quality: {prediction[0]}")
