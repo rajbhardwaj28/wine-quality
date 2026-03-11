@@ -33,13 +33,13 @@ type = st.number_input("type")
 
 
 df = pd.DataFrame({
-    "fixed acidity": [fixed acidity],
-    "volatile acidity": [volatile acidity],
-    "citric acid": [citric acid],
-    "residual sugar": [residual sugar],
+    "fixed acidity": [fixed_acidity],
+    "volatile acidity": [volatile_acidity],
+    "citric acid": [citric_acid],
+    "residual sugar": [residual_sugar],
     "chlorides": [chlorides],
-    "free sulfur dioxide": [free sulfur dioxide],
-    "total sulfur dioxide": [total sulfur dioxide],
+    "free sulfur dioxide": [free_sulfur_dioxide],
+    "total sulfur dioxide": [total_sulfur_dioxide],
     "density": [density],
     "pH": [pH],
     "sulphates": [sulphates],
