@@ -43,7 +43,7 @@ df = pd.DataFrame({
     "pH": [pH],
     "sulphates": [sulphates],
     "alcohol": [alcohol],
-    "quality":[quality},
+    "quality":[quality],
     "type": [type}
 })
 if st.button("Predict Quality"):
