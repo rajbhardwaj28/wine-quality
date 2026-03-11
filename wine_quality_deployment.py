@@ -28,6 +28,8 @@ density = st.number_input("Density")
 pH = st.number_input("pH")
 sulphates = st.number_input("Sulphates")
 alcohol = st.number_input("Alcohol")
+quality = st.number_input("Quality")
+type = st.number_input("type")
 
 df = pd.DataFrame({
     "fixed acidity": [fixed_acidity],
@@ -40,7 +42,9 @@ df = pd.DataFrame({
     "density": [density],
     "pH": [pH],
     "sulphates": [sulphates],
-    "alcohol": [alcohol]
+    "alcohol": [alcohol],
+    "quality":[quality},
+    "type": [type}
 })
 if st.button("Predict Quality"):
     prediction = model.predict(df)
